@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -91,5 +91,17 @@ This is the place for you to write reflections:
 
 
 #### Reflection Publisher-2
+
+- In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+= Prinsip *Separation of Concerns* dalam desain sistem *software* menekankan pentingnya memisahkan setiap bagian sistem berdasarkan fokus fungsinya, sehingga memungkinan perubahan spesifik hanya pada bagian yang terkait. Dalam konteks ini, *Repository* bertugas menyimpan dan mengambil data, sementara *Service* mengelola logika bisnis. Pemisahan antara *Service* dan *Repository* mengikuti prinsip Single Responsibility Principle (SRP), di mana *Service* mengolah data dari *Repository*, dan *Repository* bertindak sebagai *layer* akses ke database untuk operasi seperti update dan delete. Memisahkan kedua *layer* ini tidak hanya memudahkan pengembangan, tetapi juga meningkatkan kemudahan dalam pemeliharaan kode.
+
+- What happens if we only use the Model? Explain your imagination on how the interactions between each model **(Program, Subscriber, Notification)** affect the code complexity for each model?
+
+= Bergantung hanya pada model untuk menangani penyimpanan data dan logika bisnis dapat mengakibatkan *tightly coupled*, di mana model harus saling mengetahui dan bergantung satu sama lain. Ini berarti bahwa perubahan pada satu model dapat memicu kebutuhan akan perubahan pada model lainnya, yang membuat kode sulit untuk dipelihara. Jika hanya menggunakan *layer* model tanpa pemisahan tugas ke *layer* lain, maka akan menghasilkan program yang kurang fleksibel, di mana perubahan kecil dapat mengakibatkan revisi luas terhadap kode, meningkatkan kompleksitas, dan mengurangi kemudahan pemeliharaan.
+
+- Have you explored more about **Postman**? Tell us how this tool helps you to test your current work. Maybe you want to also list which features in Postman you are interested in or feel like it’s helpful to help your Group Project or any of your future software engineering projects.
+
+= **Postman** adalah sebuah alat yang digunakan untuk menguji API yang memungkinkan pengguna untuk melakukan berbagai jenis permintaan HTTP seperti GET, POST, DELETE, dan lainnya dengan mudah. Salah satu fitur menarik yang dimiliki adalah kemampuan untuk menyesuaikan jenis permintaan dan berbagi kumpulan permintaan hanya dengan menyalin dan menempelkan teks. Ini sangat membantu dalam menguji aplikasi yang sedang dikembangkan untuk memastikan bahwa respon yang dihasilkan sesuai dengan harapan terhadap permintaan yang dibuat. Dengan **Postman**, pengguna dapat mengeksplorasi dan memverifikasi fungsi CRUD aplikasi untuk memeriksa apakah data yang diambil sudah benar.
 
 #### Reflection Publisher-3
